@@ -16,6 +16,6 @@ jobs:
       with:
         node-version: '12.x'
     - run: |
-      npm install
-      npm run examples:lint
-      npm run examples:test
+        npm install
+        npm run examples:lint
+        npm run examples:test
