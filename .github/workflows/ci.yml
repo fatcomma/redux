@@ -6,14 +6,15 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+    strategy:
+      fail-fast: false
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
       run: echo Hello, world!
     - uses: actions/setup-node@v1
       with:
-        node-version: '10.x'
+        node-version: '12.x'
     - run: npm install
     - run: npm run examples:lint
     - run: run examples:test
