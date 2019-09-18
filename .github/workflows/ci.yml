@@ -7,14 +7,14 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
+      matrix: 
+        node: [8, 10, 12]
       fail-fast: false
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: ${{ matrix.node }}
     - run: |
         npm install || true
         npm run examples:lint
